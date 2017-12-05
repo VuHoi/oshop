@@ -1,0 +1,33 @@
+
+
+<div class="card a" >
+        <img class="card-img-top center-img"  src="assets\content\logo.jpg"  alt="Card image cap">
+        <div class="card-body">
+                <div class="form-group">
+                        <label for="Username">Username</label>
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">@</span>
+                          <input #Username="ngModel" [(ngModel)]="Username1" type="text" id="Username" name="Username"  class="form-control" required>
+                        </div>
+                     
+                        <div class="alert alert-danger" *ngIf="Username.touched && Username.invalid" > Username is required. </div>
+                      </div>
+                      <div class="form-group">
+                            <label for="Password">Password</label>
+                            <div class="input-group">
+                              <span class="input-group-addon" id="basic-addon1">*</span>
+                              <input #Password="ngModel" [(ngModel)]="Password1" type="password" id="Password" name="Password"  class="form-control" required>
+                            </div>
+                         
+                            <div class="alert alert-danger" *ngIf="Password.touched && Password.invalid" > Password is required. </div>
+                          </div>
+                          <button class="btn btn-primary float-left button" (click)="loginWithAccount()">Login With Account</button>
+                          
+                          <button class="btn btn-primary button float-right" (click)="login()">Login With Google</button>
+        </div>
+      
+      </div>
+
+
+
+

@@ -1,0 +1,22 @@
+<h1>Orders Manegement</h1>
+
+<ng-container class="row col-10" *ngIf=" orders$ | async as orders">
+  <table  class="table">
+    <thead>
+        <tr>
+            
+           <th >Customer</th>
+          
+           <th class="text-center">Date</th>
+           <th class="text-center">Detail</th>
+         </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let item of orders ">
+           <td > {{item.shipping.name}}</td>
+           <td class="text-center"> {{item.datePlaced |date:'fullDate'}}</td>
+           <td class="text-center"><button class="btn btn-primary" [routerLink]="['/detail',item.$key]">View</button></td>
+          </tr>
+    </tbody>
+  </table>
+  </ng-container>

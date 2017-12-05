@@ -1,0 +1,13 @@
+.imagecircle{
+  
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+       
+    
+}
+
+.center-vehical{
+    display: table-cell;
+    vertical-align: middle;
+}

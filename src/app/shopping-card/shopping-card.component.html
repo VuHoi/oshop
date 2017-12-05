@@ -1,0 +1,51 @@
+<h1>Shopping Cart </h1>
+<ng-container class="row col-10" *ngIf=" cart$ | async as cart">
+  <p>
+    You have {{cart.totalItemCount}} items in your shop cart .
+  </p>
+
+  <table class="table">
+    <thead>
+      <tr>
+         
+        <th >Product</th>
+       
+        <th class="text-center">Quantity</th>
+        <th class="text-center">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cart.items ">
+        
+       
+        <td >
+            <img alt="Avatar" [src]="item.imageUrl">   <b class="mar">{{item.title}}</b>  
+        </td>
+        <!-- <td>{{item.quantity}}</td> -->
+       <td class="center-vehical" > <product-quatity [product]="item"  [shoping-cart]="cart" ></product-quatity></td>
+
+        <td  class="text-center center-vehical">{{item.totalPrice |currency:'USD':true}}</td>
+       
+      </tr>
+    
+    </tbody>
+
+   <tfoot>
+     <tr>
+       <th></th>
+       <th></th>
+       <th class="text-center"><b>{{cart.totalPrice |currency:'USD':true}}</b></th>
+     </tr>
+     <tr>
+      <th></th>
+      <th></th>
+      <th class="text-center">
+        <button *ngIf="cart.items.length" style="height:50px;width:100px" (click)="shoppingCartService.clearCart()" class="btn btn-danger btn-sm">Clear Cart</button>
+        <button *ngIf="cart.items.length" style="height:50px;width:100px" routerLink="/check-out"  class="btn btn-primary">Check Out</button>
+        
+      </th>
+    </tr>
+   </tfoot>
+  </table>
+
+</ng-container>

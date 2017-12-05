@@ -1,0 +1,38 @@
+
+
+  <form #f="ngForm" (ngSubmit)="placeOrder()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><img src="assets\content\user.ico"></span>
+          <input #name="ngModel" [(ngModel)]="shipping.name" type="text" id="name" name="name"  class="form-control" required>
+        </div>
+     
+        <div class="alert alert-danger" *ngIf="name.touched && name.invalid" > Name is required. </div>
+      </div>
+      <div class="form-group">
+          <label for="Address">Address</label>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><img src="assets\content\home.jpg"></span>
+            <input #Address="ngModel" [(ngModel)]="shipping.address" type="text" id="Address" name="Address"  class="form-control" required>
+          </div>
+       
+          <div class="alert alert-danger" *ngIf="Address.touched && Address.invalid" > Address is required. </div>
+        </div>
+        <div class="form-group">
+            <label for="City">City</label>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1"><img src="assets\content\city.png"></span>
+              <input #City="ngModel" [(ngModel)]="shipping.city" type="text" id="City" name="City"  class="form-control" required>
+            </div>
+         
+            <div class="alert alert-danger" *ngIf="City.touched && City.invalid" > Name is required. </div>
+            <button class="btn btn-primary position">Book</button>
+          </div>
+     
+        
+         
+         
+    </form>
+
+

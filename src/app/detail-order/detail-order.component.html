@@ -1,0 +1,30 @@
+<h1>Order</h1>
+<div *ngIf="order$|async as order">
+
+    <h4>Thông tin khách hàng : {{order.shipping.name}}</h4>
+    <p>Địa chỉ giao hàng : {{order.shipping.address}}</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th class="text-center">Quantity</th>
+                <th class="text-center">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of order.items" >
+                <td >
+                    <img class="imagecircle" [src]="item.product.imageUrl">
+                </td>
+                <td class="text-center center-vehical">
+                    {{item.quantity}}
+                </td>
+                <td class="text-center center-vehical">
+                    {{item.totalPrice |currency:'USD':true}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
